@@ -1,3 +1,4 @@
+import { situations } from "@/components/situation/SituationDescription";
 import { Card } from "flowbite-react";
 
 export default async function Page() {
@@ -30,21 +31,3 @@ export default async function Page() {
     </div>
   );
 }
-
-export const situations = [
-  {
-    caption: "Introducing yourself",
-    icon: "/images/introducing-yourself.png",
-    configId: process.env.NEXT_PUBLIC_HUME_INTRODUCTION_CONFIG_ID,
-  },
-  {
-    caption: "Receiving a compliment",
-    icon: "/images/receiving-a-compliment.png",
-    configId: process.env.NEXT_PUBLIC_HUME_RECEIVING_COMPLIMENT_CONFIG_ID,
-  },
-  {
-    caption: "Giving a compliment",
-    icon: "/images/giving-a-compliment.png",
-    configId: process.env.NEXT_PUBLIC_HUME_GIVING_COMPLIMENT_CONFIG_ID,
-  },
-];
