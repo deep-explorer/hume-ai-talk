@@ -1,16 +1,22 @@
 "use client";
 import { VoiceProvider } from "@humeai/voice-react";
-import Messages from "./Controls";
-import Controls from "./Messages";
+import Controls from "./Controls";
+import Messages from "./Messages";
+import { useParams } from "next/navigation";
 
 export default function ClientComponent({
   accessToken,
 }: {
   accessToken: string;
 }) {
+  const params = useParams();
+
   return (
-    <VoiceProvider auth={{ type: "accessToken", value: accessToken }}>
-      <Messages />
+    <VoiceProvider
+      auth={{ type: "accessToken", value: accessToken }}
+      configId={params.configId as string}
+    >
+      {/* <Messages /> */}
       <Controls />
     </VoiceProvider>
   );
