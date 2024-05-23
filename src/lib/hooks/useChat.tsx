@@ -6,7 +6,7 @@ import {
 } from "@humeai/voice";
 import * as React from "react";
 
-type Message = UserTranscriptMessage | AssistantTranscriptMessage;
+export type Message = UserTranscriptMessage | AssistantTranscriptMessage;
 
 interface ChatContext {
   messages: Message[];

@@ -23,5 +23,10 @@ export async function POST(request: Request) {
   });
 
   console.log({ chatCompletion });
-  return Response.json({ feedback: chatCompletion.choices[0].message.content });
+  return new Response(
+    JSON.stringify({ feedback: chatCompletion.choices[0].message.content }),
+    {
+      headers: { "Content-Type": "application/json" },
+    }
+  );
 }

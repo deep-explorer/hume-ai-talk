@@ -5,7 +5,7 @@ import { FaPlay } from "react-icons/fa";
 import { FaStop } from "react-icons/fa";
 import { AudioRecorderWithVisualizer } from "./AudioVisualizer";
 import { useRouter } from "next/navigation";
-import { useChatContext } from "@/lib/hooks/useChat";
+import { Message, useChatContext } from "@/lib/hooks/useChat";
 
 export default function Controls() {
   const router = useRouter();
@@ -29,7 +29,7 @@ export default function Controls() {
                   (msg) =>
                     msg.type === "user_message" ||
                     msg.type === "assistant_message"
-                )
+                ) as Message[]
               );
               disconnect();
               router.push("/feedback");
