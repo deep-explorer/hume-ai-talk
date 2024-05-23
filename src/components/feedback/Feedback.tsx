@@ -84,7 +84,7 @@ export const Feedback = () => {
                 <h2 className="text-xl font-semibold mb-4">Top averages</h2>
                 <div className="flex flex-col gap-2">
                   {topAverages?.map((item, index) => (
-                    <div>
+                    <div key={index}>
                       <div className="flex justify-between mb-2" key={index}>
                         <p>{item.key}</p>
                         <p className="text-gray-500">{item.value.toFixed(3)}</p>
@@ -103,7 +103,7 @@ export const Feedback = () => {
                 <h2 className="text-xl font-semibold mb-4">Highest peaks</h2>
                 <div className="flex flex-col gap-2">
                   {topHighest?.map((item, index) => (
-                    <div>
+                    <div key={index}>
                       <div className="flex justify-between mb-2" key={index}>
                         <p>{item.key}</p>
                         <p className="text-gray-500">{item.value.toFixed(3)}</p>
