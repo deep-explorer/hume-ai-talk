@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeModeScript } from "flowbite-react";
 import { Navbar } from "@/components/containers/Navbar";
 import { Footer } from "@/components/containers/Footer";
+import { ChatProvider } from "@/lib/hooks/useChat";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +26,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Navbar />
         <main className="flex items-center justify-center w-full min-h-[100vh]">
-          {children}
+          <ChatProvider>{children}</ChatProvider>
         </main>
         <Footer />
       </body>

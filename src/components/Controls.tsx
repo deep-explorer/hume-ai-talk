@@ -5,10 +5,12 @@ import { FaPlay } from "react-icons/fa";
 import { FaStop } from "react-icons/fa";
 import { AudioRecorderWithVisualizer } from "./AudioVisualizer";
 import { useRouter } from "next/navigation";
+import { useChatContext } from "@/lib/hooks/useChat";
 
 export default function Controls() {
   const router = useRouter();
-  const { connect, disconnect, readyState } = useVoice();
+  const { connect, disconnect, readyState, messages } = useVoice();
+  const { setMessages } = useChatContext();
 
   return (
     <div className="flex flex-col gap-36 w-[350px]">
@@ -22,6 +24,13 @@ export default function Controls() {
         {readyState === VoiceReadyState.OPEN ? (
           <Button
             onClick={() => {
+              setMessages(
+                messages.filter(
+                  (msg) =>
+                    msg.type === "user_message" ||
+                    msg.type === "assistant_message"
+                )
+              );
               disconnect();
               router.push("/feedback");
             }}
