@@ -18,6 +18,7 @@ export const Situation = () => {
               height={108}
               width={108}
               alt={situation.caption}
+              className="rounded-lg"
             />
             <h5 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
               {situation.caption}
