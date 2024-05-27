@@ -52,7 +52,7 @@ export const SituationDescription = () => {
             </div>
             <div className="text-sm">
               <b>
-                <i>Don't:</i>
+                <i>Don&apos;t:</i>
               </b>
               {situation.dont.map((item, index) => (
                 <p key={index}>{item}</p>
