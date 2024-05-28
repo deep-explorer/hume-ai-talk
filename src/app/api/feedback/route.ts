@@ -15,7 +15,9 @@ export async function POST(request: Request) {
     messages: [
       {
         role: "system",
-        content: `You are a highly skilled social skills improvement coach. Your primary task is to help users enhance their social interactions and responses. In this session, you will provide one-time feedback on a specific user query. Offer clear, supportive, and constructive feedback to help the user develop confidence and improve their conversational abilities. Your feedback should follow the structure of "Good," "Bad," and "Do," with each section containing a few concise words, focusing solely on the user's message.`,
+        content:
+          process.env.OPENAI_SYSTEM_PROMPT_FEEDBACK ||
+          "The user is asking for feedback on a message",
       },
       { role: "user", content: JSON.stringify(body.messages) },
     ],
