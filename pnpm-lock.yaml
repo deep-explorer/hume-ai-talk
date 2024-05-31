@@ -9,8 +9,8 @@ dependencies:
     specifier: ^0.1.2
     version: 0.1.2
   '@humeai/voice-react':
-    specifier: ^0.1.2
-    version: 0.1.2(@types/react@18.0.0)
+    specifier: ^0.1.5
+    version: 0.1.5
   flowbite-react:
     specifier: ^0.9.0
     version: 0.9.0(react-dom@18.0.0)(react@18.0.0)(tailwindcss@3.4.1)
@@ -141,25 +141,31 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@humeai/voice-react@0.1.2(@types/react@18.0.0):
-    resolution: {integrity: sha512-+seHQh+R9/DFBBRIvgOkeGXGuxO8w63cxpTo49/L2tQ65lkFV2F3PVyrgHGQ6pUwN44JiIoQ7pq8zKSYME9Fbw==}
+  /@humeai/voice-react@0.1.5:
+    resolution: {integrity: sha512-PqA/RnmfgV8PH8ifbGxhD8TFjU+qFVL0nZR1C+bik0gLyumE0z4S8D4TpaJnks9rYhmTAt3zXj98SfL6dZ/keg==}
     dependencies:
-      '@humeai/voice': 0.1.2
-      '@testing-library/react-hooks': 8.0.1(@types/react@18.0.0)(react-dom@18.3.1)(react@18.3.1)
+      '@humeai/voice': 0.1.5
       date-fns: 3.6.0
       meyda: 5.6.3
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       zod: 3.23.8
     transitivePeerDependencies:
-      - '@types/react'
-      - react-test-renderer
       - rollup
       - supports-color
     dev: false
 
   /@humeai/voice@0.1.2:
     resolution: {integrity: sha512-k6sQUEa8JwPG0wc2sINSffZaTLUvuVEF5YyY5H0e5g8L7MVQAzdxMgaKKBWNUFpNYXdZwofxsmuoM9M2aqfDwQ==}
+    dependencies:
+      reconnecting-websocket: 4.4.0
+      snakecase-keys: 8.0.1
+      ts-pattern: 5.1.1
+      zod: 3.23.8
+    dev: false
+
+  /@humeai/voice@0.1.5:
+    resolution: {integrity: sha512-xtF9ADEcxk2uY6dnJJcx34AmWHYPAOKA0p8AQoKcep/TQASgXu4U3VMWXbHFF6DiB1SapaEXs3CNCHOlW+z/Qg==}
     dependencies:
       reconnecting-websocket: 4.4.0
       snakecase-keys: 8.0.1
@@ -368,29 +374,6 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@testing-library/react-hooks@8.0.1(@types/react@18.0.0)(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-Aqhl2IVmLt8IovEVarNDFuJDVWVvhnr9/GCU6UUnrYXwgDFF9h2L2o2P9KBni1AST5sT6riAyoukFLyjQUgD/g==}
-    engines: {node: '>=12'}
-    peerDependencies:
-      '@types/react': ^16.9.0 || ^17.0.0
-      react: ^16.9.0 || ^17.0.0
-      react-dom: ^16.9.0 || ^17.0.0
-      react-test-renderer: ^16.9.0 || ^17.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      react-dom:
-        optional: true
-      react-test-renderer:
-        optional: true
-    dependencies:
-      '@babel/runtime': 7.24.5
-      '@types/react': 18.0.0
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      react-error-boundary: 3.1.4(react@18.3.1)
-    dev: false
-
   /@types/estree@1.0.5:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
     dev: false
@@ -417,6 +400,7 @@ packages:
 
   /@types/prop-types@15.7.12:
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
+    dev: true
 
   /@types/react-dom@18.0.0:
     resolution: {integrity: sha512-49897Y0UiCGmxZqpC8Blrf6meL8QUla6eb+BBhn69dTXlmuOlzkfr7HHY/O8J25e1lTUMs+YYxSlVDAaGHCOLg==}
@@ -430,6 +414,7 @@ packages:
       '@types/prop-types': 15.7.12
       '@types/scheduler': 0.23.0
       csstype: 3.1.3
+    dev: true
 
   /@types/resolve@1.20.2:
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
@@ -437,6 +422,7 @@ packages:
 
   /@types/scheduler@0.23.0:
     resolution: {integrity: sha512-YIoDCTH3Af6XM5VuwGG/QL/CJqga1Zm3NkU3HZ4ZHK2fRMPYP1VczsTUqtsf43PH/iJNVlPHAo2oWX7BSdB2Hw==}
+    dev: true
 
   /@typescript-eslint/parser@7.2.0(eslint@8.0.0)(typescript@5.0.2):
     resolution: {integrity: sha512-5FKsVcHTk6TafQKQbuIVkXq58Fnbkd2wDL4LB7AURN7RUOu1utVP+G8+6u3ZhEroW3DF6hyo3ZEXxgKgp4KeCg==}
@@ -874,6 +860,7 @@ packages:
 
   /csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
+    dev: true
 
   /damerau-levenshtein@1.0.8:
     resolution: {integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==}
@@ -2600,16 +2587,6 @@ packages:
       loose-envify: 1.4.0
       react: 18.3.1
       scheduler: 0.23.2
-    dev: false
-
-  /react-error-boundary@3.1.4(react@18.3.1):
-    resolution: {integrity: sha512-uM9uPzZJTF6wRQORmSrvOIgt4lJ9MC1sNgEOj2XGsDTRE4kmpWxg7ENK9EWNKJRMAOY9z0MuF4yIfl6gp4sotA==}
-    engines: {node: '>=10', npm: '>=6'}
-    peerDependencies:
-      react: '>=16.13.1'
-    dependencies:
-      '@babel/runtime': 7.24.5
-      react: 18.3.1
     dev: false
 
   /react-icons@5.0.1(react@18.0.0):

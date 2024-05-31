@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@humeai/voice": "^0.1.2",
-    "@humeai/voice-react": "^0.1.2",
+    "@humeai/voice-react": "^0.1.5",
     "flowbite-react": "^0.9.0",
     "next": "14.2.3",
     "openai": "^4.47.1",
